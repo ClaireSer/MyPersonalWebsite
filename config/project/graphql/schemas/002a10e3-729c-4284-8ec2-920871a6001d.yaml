@@ -1,0 +1,4 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sites.72d57a2e-efaa-45e8-8aa0-abee06f37785:read' # Lafitte's Original

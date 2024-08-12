@@ -1,0 +1,44 @@
+dateModified: 1723450986
+email:
+  fromEmail: clairelafitte37@gmail.com
+  fromName: 'Lafitte''s Original'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  images:
+    hasUrls: false
+    name: Images
+    settings:
+      path: assets
+    type: craft\fs\Local
+    url: null
+meta:
+  __names__:
+    002a10e3-729c-4284-8ec2-920871a6001d: 'Public Schema' # Public Schema
+    2d76a4ed-1de2-4561-ab8e-dfcdfab066c4: 'Blog article' # Blog article
+    5cee9b0f-499a-453d-959b-64ec559484cc: Image # Image
+    9acad094-6e07-4bb0-819f-9c7fec768f2a: Home # Home
+    28bd6954-2b69-4848-85bc-d5f924f0481f: Portfolio # Portfolio
+    48fe682e-c0f9-488a-aef6-f57bf914d5ef: Home # Home
+    72d57a2e-efaa-45e8-8aa0-abee06f37785: 'Lafitte''s Original' # Lafitte's Original
+    221b61f5-0f46-4d9f-a0d3-14441bbf3588: Images # Images
+    397d15f9-4743-40b6-b08e-f55dec5d0c13: Blog # Blog
+    1468bf93-b003-407b-b3eb-74bd76867ce7: Portfolio # Portfolio
+    56497856-37c4-4c09-967f-a22cb2aafafe: 'Lafitte''s Original' # Lafitte's Original
+plugins:
+  stripe:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: 'Lafitte''s Original'
+  schemaVersion: 5.3.0.2
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

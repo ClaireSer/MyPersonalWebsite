@@ -1,0 +1,89 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+
+{% set env = getenv('ENVIRONMENT') %}
+{% set baseUrl = url() %}
+{% header "Link: <#{baseUrl}>; rel=dns-prefetch;,<#{baseUrl}>; rel=preconnect; crossorigin;" %}
+<!DOCTYPE html>
+
+<html lang="{{ craft.app.language | slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+    <head>
+        <link rel="dns-prefetch" href="{{ baseUrl }}" crossorigin>
+        <link rel="preconnect" href="{{ baseUrl }}" crossorigin>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="csrf-token-name" content="{{ craft.app.config.general.csrfTokenName }}">
+        <meta name="csrf-token" content="{{ craft.app.request.csrfToken() }}">
+
+        <title>Folio Bootstrap Template - Index</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+
+        {#-- Favicons --#}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ alias('@assetBaseUrl/assets/dist/images/icons/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ alias('@assetBaseUrl/assets/dist/images/icons/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ alias('@assetBaseUrl/assets/dist/images/icons/favicon-16x16.png') }}">
+        {# <link rel="manifest" href="{{ alias('@assetBaseUrl/assets/dist/manifest.json') }}"> #}
+        <link rel="mask-icon" href="{{ alias('@assetBaseUrl/assets/dist/images/icons/safari-pinned-tab.svg') }}" color="#000000">
+        <link rel="shortcut icon" href="{{ alias('@assetBaseUrl/assets/dist/favicon.ico') }}">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-config" content="{{ url('browserconfig.xml') }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        {# -- Inline CSS block used by templates for Critical CSS #}
+        {# -- Only use Critical CSS & LoadCSS when we have it available to prevent flashing #}
+        {# {% set inline_css = "" %}
+        {% if env != "local" %}
+            {% set inline_css =  block("inline_css") is defined ? block("inline_css") : "" %}
+        {% endif %} #}
+        {# {% if inline_css | trim is not empty %}
+            <style>{{ inline_css | raw | replace({'/assets/dist/': alias('@assetBaseUrl/assets/dist/')}) }}</style>
+            {{ craft.twigpack.includeCssModule('/css/site.css', true) }}
+        {% else %}
+            {{ craft.twigpack.includeCssModule('/css/site.css', false) }}
+        {% endif %} #}
+
+        <!-- Template Main CSS File -->
+        <link href="{{ alias('@assetBaseUrl/css/style.css') }}" rel="stylesheet">
+
+        <!-- =======================================================
+        * Template Name: Folio
+        * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+        * Updated: Mar 17 2024 with Bootstrap v5.3.3
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+    </head>
+
+    <body class="first-load loading {% if bodyClass is defined %}{{ bodyClass }}{% endif %}">
+
+        {% block body %}{% endblock %}
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/typed.js/typed.umd.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{{ alias('@assetBaseUrl/js/main.js') }}"></script>
+
+        {# {{ craft.twigpack.includeJsModule("/js/site.js") }} #}
+
+    </body>
+
+</html>

@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: fr-CH
+name: 'Lafitte''s Original'
+primary: true
+siteGroup: 56497856-37c4-4c09-967f-a22cb2aafafe # Lafitte's Original
+sortOrder: 1

@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 28bd6954-2b69-4848-85bc-d5f924f0481f # Portfolio
+handle: portfolio
+maxAuthors: 1
+name: Portfolio
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Page d‘entrée primaire'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  72d57a2e-efaa-45e8-8aa0-abee06f37785: # Lafitte's Original
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/portfolio/_details.twig
+    uriFormat: 'portfolio/{slug}'
+structure:
+  maxLevels: null
+  uid: 3d82015a-fccf-493b-893b-a0934f6f7b38
+type: structure

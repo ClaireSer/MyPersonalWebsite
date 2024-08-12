@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 9acad094-6e07-4bb0-819f-9c7fec768f2a # Home
+handle: home
+maxAuthors: 1
+name: Home
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Page d‘entrée primaire'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  72d57a2e-efaa-45e8-8aa0-abee06f37785: # Lafitte's Original
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/home/_entry.twig
+    uriFormat: __home__
+type: single
