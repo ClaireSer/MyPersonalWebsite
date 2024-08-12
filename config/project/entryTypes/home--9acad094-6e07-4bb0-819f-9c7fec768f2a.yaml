@@ -10,6 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
+            dateAdded: '2024-08-12T11:57:13+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -35,8 +36,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-08-12T11:57:13+00:00'
             elementCondition: null
-            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image de fond
             handle: null
             includeInCards: false
             instructions: null
@@ -46,6 +48,70 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c08f8bb9-7120-4177-b3d1-939ae61946bd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-12T12:05:21+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Titre
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6f33c4a4-cac8-485b-8a57-0a8382bfa2ee
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-12T12:05:21+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: mobileText
+            includeInCards: false
+            instructions: null
+            label: 'Titre mobile'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ca19817-dbbb-45d1-b73c-1bdb25495fa1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-12T12:05:21+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: subText
+            includeInCards: false
+            instructions: null
+            label: 'Sous texte'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e45fde87-19ca-48c0-8616-cecd87246116
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-12T12:05:21+00:00'
+            elementCondition: null
+            fieldUid: 003e7855-a801-43fa-8c0c-da3f8bead280 # Réseaux sociaux
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 792aca41-8e16-4874-ba96-9e0695376f5e
             userCondition: null
             warning: null
             width: 100

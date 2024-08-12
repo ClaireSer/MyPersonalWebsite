@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: image
+handle: backgroundImage
 instructions: null
-name: Image
+name: 'Image de fond'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -11,10 +11,9 @@ settings:
   branchLimit: null
   defaultUploadLocationSource: 'volume:221b61f5-0f46-4d9f-a0d3-14441bbf3588' # Images
   defaultUploadLocationSubpath: null
-  localizeRelations: false
   maintainHierarchy: false
-  maxRelations: null
-  minRelations: null
+  maxRelations: 1
+  minRelations: 1
   previewMode: full
   restrictFiles: false
   restrictLocation: true
@@ -23,7 +22,7 @@ settings:
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'
@@ -31,5 +30,5 @@ settings:
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Assets

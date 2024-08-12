@@ -8,23 +8,38 @@
 
 {% block content %}
 
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="home">
+  {% set homeEntry = entry %}
+  {% if homeEntry %}
 
-    <div class="container">
-      <div class="hero-content">
-        <h1>I'm <span class="typed" data-typed-items="Alex Smith, Designer, Developer, Freelancer, Photographer"></span></h1>
-        <p>Designer, Developer, Freelancer, Photographer</p>
+    {% set homeImage = homeEntry.backgroundImage.one() %}
+    {% css %}
+      #hero {
+        background: url("{{ homeImage.url }}") repeat scroll center center/cover;
+      }
+    {% endcss %}
 
-        <ul class="list-unstyled list-social">
-          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-        </ul>
+    <!-- ======= Hero Section ======= -->
+    <div id="hero" class="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>{{ homeEntry.text }} <span class="typed" data-typed-items="{{ homeEntry.mobileText }}"></span></h1>
+          <p>{{ homeEntry.subText }}</p>
+
+          {% if homeEntry.socialNetwork %}
+            <ul class="list-unstyled list-social">
+            {% for item in homeEntry.socialNetwork %}
+              <li>
+                <a href="{{ item.link }}" target="_blank">
+                  <i class="bi bi-{{ item.name }}"></i>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </div><!-- End Hero -->
+    </div><!-- End Hero -->
+  {% endif %}
 
   <main id="main">
 
