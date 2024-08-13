@@ -9,58 +9,60 @@
 {% block content %}
 
   {% set homeEntry = entry %}
-  {% if homeEntry %}
 
-    {% set homeImage = homeEntry.backgroundImage.one() %}
-    {% css %}
-      #hero {
-        background: url("{{ homeImage.url }}") repeat scroll center center/cover;
-      }
-    {% endcss %}
+  {% set homeImage = homeEntry.backgroundImage.one() %}
+  {% css %}
+    #hero {
+      background: url("{{ homeImage.url }}") repeat scroll center center/cover;
+    }
+  {% endcss %}
 
-    <!-- ======= Hero Section ======= -->
-    <div id="hero" class="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1>{{ homeEntry.text }} <span class="typed" data-typed-items="{{ homeEntry.mobileText }}"></span></h1>
-          <p>{{ homeEntry.subText }}</p>
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>{{ homeEntry.text }} <span class="typed" data-typed-items="{{ homeEntry.mobileText }}"></span></h1>
+        <p>{{ homeEntry.subText }}</p>
 
-          {% if homeEntry.socialNetwork %}
-            <ul class="list-unstyled list-social">
-            {% for item in homeEntry.socialNetwork %}
-              <li>
-                <a href="{{ item.link }}" target="_blank">
-                  <i class="bi bi-{{ item.name }}"></i>
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
+        {% if homeEntry.socialNetwork %}
+          <ul class="list-unstyled list-social">
+          {% for item in homeEntry.socialNetwork %}
+            <li>
+              <a href="{{ item.link }}" target="_blank">
+                <i class="bi bi-{{ item.name }}"></i>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
       </div>
-    </div><!-- End Hero -->
-  {% endif %}
+    </div>
+  </div><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
+
+    {% set descriptionImage = homeEntry.descriptionImage.one() %}
     <div id="about" class="paddsection">
       <div class="container">
         <div class="row justify-content-between">
 
           <div class="col-lg-4 ">
-            <div class="div-img-bg">
-              <div class="about-img">
-                <img src="{{ alias('@assetBaseUrl/images/me.jpg') }}" class="img-responsive" alt="me">
+            {% if descriptionImage %}
+              <div class="div-img-bg">
+                <div class="about-img">
+                  <img src="{{ descriptionImage.url }}" class="img-responsive" alt="{{ descriptionImage.title }}">
+                </div>
               </div>
-            </div>
+            {% endif %}
           </div>
 
           <div class="col-lg-7">
             <div class="about-descr">
 
-              <p class="p-heading">im a ux /ui designer austin based who loves clean, simple & unique design. i also enjoy crafting brand identities, icons, & ilustration work. </p>
-              <p class="separator">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family.English person.</p>
+              <p class="p-heading">{{ homeEntry.descriptionText1 }}</p>
+              <p class="separator">{{ homeEntry.descriptionText2 }}</p>
 
             </div>
 
@@ -70,67 +72,32 @@
     </div><!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
-    <div id="services">
-      <div class="container">
+    {% set services = homeEntry.list %}
+    {% if services %}
+      <div id="services">
+        <div class="container">
 
-        <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+          <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-briefcase"></i>
-                <span>UI/UX DESIGN</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
+            {% for item in services %}
+              <div class="swiper-slide">
+                <div class="services-block">
+                  <i class="bi bi-{{ item.iconName }}"></i>
+                  <span>{{ item.title }}</span>
+                  <p class="separator">{{ item.text }}</p>
+                </div>
               </div>
-            </div><!-- End testimonial item -->
+            {% endfor %}
 
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-card-checklist"></i>
-                <span>BRAND IDENTITY</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-bar-chart"></i>
-                <span>WEB DESIGN</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-binoculars"></i>
-                <span>MOBILE APPS</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-brightness-high"></i>
-                <span>Analytics</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="services-block">
-                <i class="bi bi-calendar4-week"></i>
-                <span>PHOTOGRAPHY</span>
-                <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-              </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
+
         </div>
 
-      </div>
-
-    </div><!-- End Services Section -->
+      </div><!-- End Services Section -->
+    {% endif %}
 
     <!-- ======= Portfolio Section ======= -->
     <div id="portfolio" class="paddsection">
@@ -143,79 +110,35 @@
 
       <div class="container">
 
+        {% set activityCategories = craft.categories().group('activity') %}
+
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              {% for cat in activityCategories.all() %}
+                <li data-filter=".filter-{{ cat.slug }}">{{ cat.title }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
 
+        {% set portfolioProjects = craft.entries().section('portfolio').all() %}
+
         <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-2.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-3.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-4.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-4.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-5.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-5.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{{ alias('@assetBaseUrl/images/portfolio/portfolio-6.jpg') }}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="{{ alias('@assetBaseUrl/images/portfolio/portfolio-6.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
+          {% for project in portfolioProjects %}
+            {% set category = project.activity.one() %}
+            {% set projectImage = project.uniqueImage.one() %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ category.slug }}">
+              <img src="{{ projectImage.url }}" class="img-fluid" alt="{{ projectImage.title }}">
+              <div class="portfolio-info">
+                <h4>{{ project.projectTitle }}</h4>
+                <p>{{ project.subText }}</p>
+                <a href="{{ projectImage.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ project.title }}"><i class="bx bx-plus"></i></a>
+                <a href="{{ project.url }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>  
+          {% endfor %}
         </div>
 
       </div>
@@ -298,13 +221,14 @@
             <div class="col-lg-6">
               <div class="contact-contact">
 
-                <h2 class="mb-30">GET IN TOUCH</h2>
+                {% set address = contact.address.one() %}
+                <h2 class="mb-30">{{ address.title|upper }}</h2>
 
                 <ul class="contact-details">
-                  <li><span>23 Main, Street</span></li>
-                  <li><span>New York, United States</span></li>
-                  <li><span>+88 01912704287</span></li>
-                  <li><span>example@example.com</span></li>
+                  <li><span>{{ address.addressLine1 }}</span></li>
+                  <li><span>{{ address.addressLine2 }}</span></li>
+                  <li><span>{{ address.postalCode ~ ' ' ~ address.locality }}</span></li>
+                  <li><span>{{ contact.email }}</span></li>
                 </ul>
 
               </div>

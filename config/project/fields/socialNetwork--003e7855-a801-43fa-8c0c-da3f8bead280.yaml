@@ -13,7 +13,7 @@ settings:
           __assoc__:
             -
               - heading
-              - Nom
+              - 'Nom pour logo'
             -
               - handle
               - name

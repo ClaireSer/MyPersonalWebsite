@@ -1,13 +1,14 @@
 columnSuffix: null
-handle: backgroundImage
+handle: uniqueImage
 instructions: null
-name: 'Image de fond'
+name: 'Image unique'
 searchable: false
 settings:
   allowSelfRelations: false
-  allowSubfolders: false
+  allowSubfolders: true
   allowUploads: true
-  allowedKinds: null
+  allowedKinds:
+    - image
   branchLimit: null
   defaultUploadLocationSource: 'volume:221b61f5-0f46-4d9f-a0d3-14441bbf3588' # Images
   defaultUploadLocationSubpath: null
@@ -15,7 +16,7 @@ settings:
   maxRelations: 1
   minRelations: 1
   previewMode: full
-  restrictFiles: false
+  restrictFiles: true
   restrictLocation: true
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:221b61f5-0f46-4d9f-a0d3-14441bbf3588' # Images

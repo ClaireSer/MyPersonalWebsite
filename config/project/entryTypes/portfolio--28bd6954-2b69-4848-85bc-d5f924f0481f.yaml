@@ -35,6 +35,70 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2024-08-13T11:50:50+00:00'
+            elementCondition: null
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image unique
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d07cc85-381b-4a4a-819e-149403e24006
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T11:50:50+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: projectTitle
+            includeInCards: false
+            instructions: null
+            label: 'Titre du projet'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6ca84150-f12a-4112-8db2-ff5eee6512f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T11:50:50+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: subText
+            includeInCards: false
+            instructions: null
+            label: 'Sous texte'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d9bbe4b-0a4a-4b8a-9188-711db436bec1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T11:55:38+00:00'
+            elementCondition: null
+            fieldUid: 588e3523-dd00-4fc5-8e05-772f8e351b8f # Domaine d'activité
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 46764e58-1310-4587-96f6-076875c960fb
+            userCondition: null
+            warning: null
+            width: 100
         name: Contenu
         uid: 54d9fbf2-b825-46c2-bfd0-ad92ec95af1a
         userCondition: null

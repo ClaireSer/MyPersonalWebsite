@@ -1,31 +1,44 @@
-dateModified: 1723468485
+dateModified: 1723554735
 email:
   fromEmail: clairelafitte37@gmail.com
   fromName: 'Lafitte''s Original'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
+  assets:
+    hasUrls: true
+    name: Assets
+    settings:
+      path: assets
+    type: craft\fs\Local
+    url: '@assetBaseUrl'
   images:
     hasUrls: true
     name: Images
     settings:
-      path: assets
+      path: images
     type: craft\fs\Local
     url: '@assetBaseUrl'
 meta:
   __names__:
     002a10e3-729c-4284-8ec2-920871a6001d: 'Public Schema' # Public Schema
     2d76a4ed-1de2-4561-ab8e-dfcdfab066c4: 'Blog article' # Blog article
+    3d2f8f39-b4c4-4889-883b-1a16314464be: Email # Email
     003e7855-a801-43fa-8c0c-da3f8bead280: 'Réseaux sociaux' # Réseaux sociaux
-    5cee9b0f-499a-453d-959b-64ec559484cc: 'Image de fond' # Image de fond
+    5cee9b0f-499a-453d-959b-64ec559484cc: 'Image unique' # Image unique
+    6cf4390c-e895-47ec-a321-feba1e1e7501: 'Liste avec icônes' # Liste avec icônes
     9acad094-6e07-4bb0-819f-9c7fec768f2a: Home # Home
     28bd6954-2b69-4848-85bc-d5f924f0481f: Portfolio # Portfolio
+    43da522b-bfe0-40f1-8162-084e48fda1ab: Contact # Contact
     48fe682e-c0f9-488a-aef6-f57bf914d5ef: Home # Home
+    52b05483-7e0d-490a-ad33-b26095e93fd9: Adresse # Adresse
     72d57a2e-efaa-45e8-8aa0-abee06f37785: 'Lafitte''s Original' # Lafitte's Original
     221b61f5-0f46-4d9f-a0d3-14441bbf3588: Images # Images
     397d15f9-4743-40b6-b08e-f55dec5d0c13: Blog # Blog
+    588e3523-dd00-4fc5-8e05-772f8e351b8f: 'Domaine d''activité' # Domaine d'activité
     1468bf93-b003-407b-b3eb-74bd76867ce7: Portfolio # Portfolio
     79346af6-2fe8-424b-a33b-3a821ea15e58: Texte # Texte
     56497856-37c4-4c09-967f-a22cb2aafafe: 'Lafitte''s Original' # Lafitte's Original
+    eac18b4f-6a99-44b0-8452-4678a0badd91: 'Domaine d''activité' # Domaine d'activité
 plugins:
   stripe:
     edition: standard

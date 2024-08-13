@@ -1,0 +1,133 @@
+columnSuffix: null
+handle: list
+instructions: null
+name: 'Liste avec icônes'
+searchable: false
+settings:
+  addRowLabel: 'Ajouter une ligne'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Nom de l''icône'
+            -
+              - handle
+              - iconName
+            -
+              - width
+              - ''
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - bar-chart
+                    -
+                      - value
+                      - bar-chart
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - binoculars
+                    -
+                      - value
+                      - binoculars
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - brightness-high
+                    -
+                      - value
+                      - brightness-high
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - calendar4-week
+                    -
+                      - value
+                      - calendar4-week
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - briefcase
+                    -
+                      - value
+                      - briefcase
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - card-checklist
+                    -
+                      - value
+                      - card-checklist
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Titre
+            -
+              - handle
+              - title
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Texte
+            -
+              - handle
+              - text
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults: null
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

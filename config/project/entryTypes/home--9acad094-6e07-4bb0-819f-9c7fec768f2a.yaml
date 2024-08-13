@@ -38,11 +38,11 @@ fieldLayouts:
           -
             dateAdded: '2024-08-12T11:57:13+00:00'
             elementCondition: null
-            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image de fond
-            handle: null
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image unique
+            handle: backgroundImage
             includeInCards: false
             instructions: null
-            label: null
+            label: 'Image de fond'
             providesThumbs: false
             required: false
             tip: null
@@ -115,8 +115,84 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Contenu
+        name: 'First section'
         uid: 9eff2700-52c2-48fb-9178-e576e480dced
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-08-13T11:12:33+00:00'
+            elementCondition: null
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image unique
+            handle: descriptionImage
+            includeInCards: false
+            instructions: null
+            label: 'Image de description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9660f62d-080d-455d-8861-8177c739b0b6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T11:09:22+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: descriptionText1
+            includeInCards: false
+            instructions: null
+            label: 'Texte 1 de description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f286f976-885b-4459-85eb-bc7d74191f0e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T11:09:22+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: descriptionText2
+            includeInCards: false
+            instructions: null
+            label: 'Texte 2 de description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d530aaf1-5fb8-449c-bd7b-ae16cdf8145a
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Second section'
+        uid: 495d7752-3c4c-4f9a-a833-4dffdd074d8f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-08-13T11:24:03+00:00'
+            elementCondition: null
+            fieldUid: 6cf4390c-e895-47ec-a321-feba1e1e7501 # Liste avec icônes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 01c3a7f3-abc8-493a-b34f-0b517a7f131a
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Third section'
+        uid: 239824b2-1766-4814-a864-9c5a71ad5b96
         userCondition: null
 handle: home
 hasTitleField: true

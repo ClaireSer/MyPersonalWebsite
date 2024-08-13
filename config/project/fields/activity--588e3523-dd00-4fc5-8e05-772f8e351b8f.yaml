@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: activity
+instructions: null
+name: 'Domaine d''activité'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: 1
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: false
+  source: 'group:eac18b4f-6a99-44b0-8452-4678a0badd91' # Domaine d'activité
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Categories

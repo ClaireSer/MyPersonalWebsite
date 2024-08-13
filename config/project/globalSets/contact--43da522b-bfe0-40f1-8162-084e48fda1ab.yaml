@@ -1,0 +1,44 @@
+fieldLayouts:
+  8cb097bd-11d4-4112-9cd8-cc1ffef751cb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-08-13T13:10:05+00:00'
+            elementCondition: null
+            fieldUid: 52b05483-7e0d-490a-ad33-b26095e93fd9 # Adresse
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 219a02cc-a01a-4aad-9e73-6aa7fec1dfc7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-13T13:12:15+00:00'
+            elementCondition: null
+            fieldUid: 3d2f8f39-b4c4-4889-883b-1a16314464be # Email
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff8cc1c2-0004-4cd1-953b-47133dde8eed
+            userCondition: null
+            warning: null
+            width: 100
+        name: Contenu
+        uid: a4795525-1906-4e38-9521-2ad728101c28
+        userCondition: null
+handle: contact
+name: Contact
+sortOrder: 1
