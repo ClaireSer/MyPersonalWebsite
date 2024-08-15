@@ -5,15 +5,14 @@
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+          {% for item in footer.socialNetwork %}
+            <li><a href="{{ item.link }}" target="_blank"><i class="bi bi-{{ item.name }}"></i></a></li>
+          {% endfor %}
         </ul>
 
       </div>
 
-      <p>&copy; Copyrights Folio. All rights reserved.</p>
+      <p>{{ footer.text }}</p>
 
       <div class="credits">
         <!--

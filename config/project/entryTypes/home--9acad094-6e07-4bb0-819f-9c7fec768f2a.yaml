@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   d474c733-48cf-4b1a-a592-8df65ff7fd56:
     tabs:
@@ -196,7 +196,7 @@ fieldLayouts:
         userCondition: null
 handle: home
 hasTitleField: true
-icon: ''
+icon: house
 name: Home
 showSlugField: true
 showStatusField: true

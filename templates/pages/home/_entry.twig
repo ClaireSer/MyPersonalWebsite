@@ -146,65 +146,34 @@
     </div><!-- End Portfolio Section -->
 
     <!-- ======= Journal Section ======= -->
-    <div id="journal" class="text-left paddsection">
+    <div id="blog" class="text-left paddsection">
 
       <div class="container">
         <div class="section-title text-center">
-          <h2>journal</h2>
+          <h2>Blog</h2>
         </div>
       </div>
 
+      {% set blogArticles = craft.entries().section('blog').all() %}
       <div class="container">
         <div class="journal-block">
           <div class="row">
 
-            <div class="col-lg-4 col-md-6">
-              <div class="journal-info">
-
-                <a href="blog-single.html"><img src="{{ alias('@assetBaseUrl/images/blog-post-1.jpg') }}" class="img-responsive" alt="img"></a>
-
-                <div class="journal-txt">
-
-                  <h4><a href="blog-single.html">SO LETS MAKE THE MOST IS BEAUTIFUL</a></h4>
-                  <p class="separator">To an English person, it will seem like simplified English
-                  </p>
-
+            {% for article in blogArticles %}
+              {% set articleImage = article.uniqueImage.one() %}
+              <div class="col-lg-4 col-md-6">
+                <div class="journal-info">
+                  <a href="{{ article.url }}">
+                    <img src="{{ articleImage.url }}" class="img-responsive" alt="{{ article.title }}">
+                  </a>
+                  <div class="journal-txt">
+                    <h4><a href="{{ article.url }}">{{ article.title|upper }}</a></h4>
+                    <p class="separator">{{ article.text }}
+                    </p>
+                  </div>
                 </div>
-
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="journal-info">
-
-                <a href="blog-single.html"><img src="{{ alias('@assetBaseUrl/images/blog-post-2.jpg') }}" class="img-responsive" alt="img"></a>
-
-                <div class="journal-txt">
-
-                  <h4><a href="blog-single.html">WE'RE GONA MAKE DREAMS COMES</a></h4>
-                  <p class="separator">To an English person, it will seem like simplified English
-                  </p>
-
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="journal-info">
-
-                <a href="blog-single.html"><img src="{{ alias('@assetBaseUrl/images/blog-post-3.jpg') }}" class="img-responsive" alt="img"></a>
-
-                <div class="journal-txt">
-
-                  <h4><a href="blog-single.html">NEW LIFE CIVILIZATIONS TO BOLDLY</a></h4>
-                  <p class="separator">To an English person, it will seem like simplified English
-                  </p>
-
-                </div>
-
-              </div>
-            </div>
+            {% endfor %}
 
           </div>
         </div>
@@ -228,6 +197,7 @@
                   <li><span>{{ address.addressLine1 }}</span></li>
                   <li><span>{{ address.addressLine2 }}</span></li>
                   <li><span>{{ address.postalCode ~ ' ' ~ address.locality }}</span></li>
+                  <br>
                   <li><span>{{ contact.email }}</span></li>
                 </ul>
 
@@ -235,18 +205,79 @@
             </div>
 
             <div class="col-lg-6">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+
+
+              {% macro errorList(errors) %}
+                  {% if errors %}
+                      {{ ul(errors, {class: 'errors'}) }}
+                  {% endif %}
+              {% endmacro %}
+
+              {% set submission = submission ?? null %}
+              {% if submission %}
+                <p>Thanks for sending that in, {{ craft.app.request.getQueryParam('from') }}!</p>
+              {% endif %}
+              {{ craft.app.request.getQueryParam('from') }}
+
+              <form method="post" action="" accept-charset="UTF-8">
+                  {{ csrfInput() }}
+                  {{ actionInput('contact-form/send') }}
+                  {{ redirectInput('?from={fromName}') }}
+
+                  <h3><label for="from-name">Your Name</label></h3>
+                  {{ input('text', 'fromName', submission.fromName ?? '', {
+                      id: 'from-name',
+                      autocomplete: 'name',
+                  }) }}
+                  {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
+
+                  <h3><label for="from-email">Your Email</label></h3>
+                  {{ input('email', 'fromEmail', submission.fromEmail ?? '', {
+                      id: 'from-email',
+                      autocomplete: 'email',
+                  }) }}
+                  {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
+
+                  <h3><label for="subject">Subject</label></h3>
+                  {{ input('text', 'subject', submission.subject ?? '', {
+                      id: 'subject',
+                  }) }}
+                  {{ submission ? _self.errorList(submission.getErrors('subject')) }}
+
+                  <h3><label for="message">Message</label></h3>
+                  {{ tag('textarea', {
+                      text: submission.message ?? '',
+                      id: 'message',
+                      name: 'message',
+                      rows: 10,
+                      cols: 40,
+                  }) }}
+                  {{ submission ? _self.errorList(submission.getErrors('message')) }}
+
+                  <button type="submit">Send</button>
+              </form>
+
+
+
+
+{# 
+
+              <form action="contact-form/send" method="post" role="form" class="php-email-form" accept-charset="UTF-8">
+                {{ csrfInput() }}
+                {{ actionInput('contact-form/send') }}
+                {{ redirectInput('contact/thanks') }}
+
                 <div class="row gy-3">
 
                   <div class="col-lg-6">
                     <div class="form-group contact-block1">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                      <input type="text" name="fromName" class="form-control" id="name" placeholder="Your Name" required>
                     </div>
                   </div>
 
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                      <input type="email" class="form-control" name="fromEmail" id="email" placeholder="Your Email" required>
                     </div>
                   </div>
 
@@ -258,7 +289,7 @@
 
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <textarea class="form-control" name="message" placeholder="Message" required></textarea>
+                      <textarea class="form-control" name="fromMessage" placeholder="Message" required></textarea>
                     </div>
                   </div>
 
@@ -273,7 +304,7 @@
                   </div>
 
                 </div>
-              </form>
+              </form> #}
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 397d15f9-4743-40b6-b08e-f55dec5d0c13 # Blog
-handle: blogArticle
+  - 9acad094-6e07-4bb0-819f-9c7fec768f2a # Home
+handle: contact
 maxAuthors: 1
-name: 'Blog article'
+name: Contact
 previewTargets:
   -
     __assoc__:
@@ -22,6 +22,6 @@ siteSettings:
   72d57a2e-efaa-45e8-8aa0-abee06f37785: # Lafitte's Original
     enabledByDefault: true
     hasUrls: true
-    template: pages/blog/_article.twig
-    uriFormat: 'blog/{slug}'
-type: channel
+    template: null
+    uriFormat: '#contact'
+type: single

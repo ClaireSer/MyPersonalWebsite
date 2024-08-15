@@ -21,8 +21,12 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/cms": "5.3.2",
+    "craftcms/ckeditor": "4.1.0",
+    "craftcms/cms": "5.3.4",
+    "craftcms/contact-form": "3.1.0",
     "craftcms/stripe": "1.1.0",
+    "hybridinteractive/craft-contact-form-extensions": "5.0.0",
+    "solspace/craft-freeform": "5.5.7",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

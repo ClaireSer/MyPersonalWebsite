@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: contentBlock
+instructions: null
+name: 'Content block'
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 350dc498-f98e-41be-869a-4d00dc55af15 # Texte riche
+    - a8949d68-f029-4477-a5eb-31d7feeb2692 # Heading
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

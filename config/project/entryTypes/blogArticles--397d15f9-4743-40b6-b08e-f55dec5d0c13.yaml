@@ -1,0 +1,115 @@
+color: indigo
+fieldLayouts:
+  cee18b1a-4636-43ca-9408-3f16a60ae24c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-08-12T08:17:03+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f9eb82a2-75b3-4eee-839d-4d1e00c6c69e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-14T08:10:05+00:00'
+            elementCondition: null
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image unique
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Image de mignature'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fe86e5d2-6a42-44cd-85ea-66380a286bf7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-14T08:10:05+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Texte de mignature'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: baca7bea-fc45-4e61-9638-a37f9cec4773
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-15T12:42:02+00:00'
+            elementCondition: null
+            fieldUid: 5cee9b0f-499a-453d-959b-64ec559484cc # Image unique
+            handle: uniqueImage2
+            includeInCards: false
+            instructions: null
+            label: 'Image principale'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d7618d75-c9c2-45ee-8cd9-02ac0f2f7a9f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-15T12:15:18+00:00'
+            elementCondition: null
+            fieldUid: 0c37905a-d5f4-4816-a946-a6b9a808e742 # Content block
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 858ca2d7-8b4a-4f9f-970a-dee323def235
+            userCondition: null
+            warning: null
+            width: 100
+        name: Contenu
+        uid: b18f94a4-86b6-4352-9298-6fd49292c2aa
+        userCondition: null
+handle: blogArticles
+hasTitleField: true
+icon: feather
+name: 'Blog articles'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

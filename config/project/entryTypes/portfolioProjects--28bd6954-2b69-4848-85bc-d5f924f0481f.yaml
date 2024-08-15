@@ -1,4 +1,4 @@
-color: null
+color: yellow
 fieldLayouts:
   cc84b24f-244a-451c-86bf-0718173a27fe:
     tabs:
@@ -102,10 +102,10 @@ fieldLayouts:
         name: Contenu
         uid: 54d9fbf2-b825-46c2-bfd0-ad92ec95af1a
         userCondition: null
-handle: portfolio
+handle: portfolioProjects
 hasTitleField: true
-icon: ''
-name: Portfolio
+icon: address-card
+name: 'Portfolio projects'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

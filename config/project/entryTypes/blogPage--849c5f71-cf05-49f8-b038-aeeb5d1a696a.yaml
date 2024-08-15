@@ -1,7 +1,6 @@
-altTranslationKeyFormat: null
-altTranslationMethod: none
+color: sky
 fieldLayouts:
-  849fb1ca-09cf-4459-865c-4e6602a59428:
+  eb9f2578-a86f-4cce-bcbf-7d093e23c845:
     tabs:
       -
         elementCondition: null
@@ -11,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-08-12T13:23:58+00:00'
+            dateAdded: '2024-08-14T12:35:32+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,20 +30,22 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\assets\AssetTitleField
-            uid: f74f2b72-e3b7-409b-8d62-bb92b53108b7
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5cc3725c-b8d7-4878-9a3d-d12259776771
             userCondition: null
             warning: null
             width: 100
         name: Contenu
-        uid: de83cec1-b15f-429a-bcbb-4d89dd55aae3
+        uid: 1e05d3bd-5846-478a-9411-39976ee62917
         userCondition: null
-fs: images
-handle: images
-name: Images
-sortOrder: 1
-subpath: ''
+handle: blogPage
+hasTitleField: true
+icon: rss
+name: 'Blog page'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-transformFs: ''
-transformSubpath: ''
