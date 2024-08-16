@@ -99,8 +99,94 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Contenu
+        name: 'Homepage content'
         uid: 54d9fbf2-b825-46c2-bfd0-ad92ec95af1a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-08-16T11:33:35+00:00'
+            elementCondition: null
+            fieldUid: 81d01265-3359-4e47-ba43-a13fa83ee2a0 # Multiple images
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c9283bc-c025-4e4b-a4e4-6c15d1323212
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-16T11:45:41+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: infoTableTitle
+            includeInCards: false
+            instructions: null
+            label: 'Titre du tableau d''information'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4a6e3b6a-27b1-4e90-b815-e9a5658aa3ab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-16T11:33:35+00:00'
+            elementCondition: null
+            fieldUid: eef85724-4842-4dcf-8997-e217b4129df6 # Tableau d'information
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3737f8b-0443-4547-959c-88125652b501
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-16T11:33:35+00:00'
+            elementCondition: null
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            handle: descriptionTitle
+            includeInCards: false
+            instructions: null
+            label: 'Titre de description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 86a0a6d8-6769-49bc-85fd-887887af3c2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-08-16T11:33:35+00:00'
+            elementCondition: null
+            fieldUid: 4c1cf3ab-0da9-4467-b2a2-cd40fa72151b # Texte riche
+            handle: descriptionText
+            includeInCards: false
+            instructions: null
+            label: 'Paragraphe de description'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fcbf57c8-e63f-463d-b728-f7f28d47b5be
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Project content'
+        uid: b8ff0fa5-25b3-4333-9fae-8c1698746baa
         userCondition: null
 handle: portfolioProjects
 hasTitleField: true
