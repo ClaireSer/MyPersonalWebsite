@@ -100,88 +100,94 @@
     {% endif %}
 
     <!-- ======= Portfolio Section ======= -->
-    <div id="portfolio" class="paddsection">
+    {% set portfolioProjects = craft.entries().section('portfolio').all() %}
+    {% if portfolioProjects|length > 0 %}
 
-      <div class="container">
-        <div class="section-title text-center">
-          <h2>My Portfolio</h2>
-        </div>
-      </div>
+      <div id="portfolio" class="paddsection">
 
-      <div class="container">
-
-        {% set activityCategories = craft.categories().group('activity') %}
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              {% for cat in activityCategories.all() %}
-                <li data-filter=".filter-{{ cat.slug }}">{{ cat.title }}</li>
-              {% endfor %}
-            </ul>
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>My Portfolio</h2>
           </div>
         </div>
 
-        {% set portfolioProjects = craft.entries().section('portfolio').all() %}
+        <div class="container">
 
-        <div class="row portfolio-container">
-          {% for project in portfolioProjects %}
-            {% set category = project.activity.one() %}
-            {% set projectImage = project.uniqueImage.one() %}
-            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ category.slug }}">
-              <img src="{{ projectImage.url }}" class="img-fluid" alt="{{ projectImage.title }}">
-              <a href="{{ project.url }}" title="More Details" class="stretched-link">
-                <div class="portfolio-info">
-                  <h4>{{ project.projectTitle }}</h4>
-                  <p>{{ project.subText }}</p>
-                  {# <a href="{{ projectImage.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ project.title }}"><i class="bx bx-plus"></i></a> #}
-                  {# <a href="{{ project.url }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> #}
-                </div>
-              </a>
-            </div>  
-          {% endfor %}
-        </div>
+          {% set activityCategories = craft.categories().group('activity') %}
 
-      </div>
-
-    </div><!-- End Portfolio Section -->
-
-    <!-- ======= Blog Section ======= -->
-    <div id="blog" class="text-left paddsection">
-
-      <div class="container">
-        <div class="section-title text-center">
-          <h2>Blog</h2>
-        </div>
-      </div>
-
-      {% set blogArticles = craft.entries().section('blog').all() %}
-      <div class="container">
-        <div class="journal-block">
           <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                {% for cat in activityCategories.all() %}
+                  <li data-filter=".filter-{{ cat.slug }}">{{ cat.title }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
 
-            {% for article in blogArticles %}
-              {% set articleImage = article.uniqueImage.one() %}
-              <div class="col-lg-4 col-md-6">
-                <div class="journal-info">
-                  <a href="{{ article.url }}">
-                    <img src="{{ articleImage.url }}" class="img-responsive" alt="{{ article.title }}">
-                  </a>
-                  <div class="journal-txt">
-                    <h4><a href="{{ article.url }}">{{ article.title|upper }}</a></h4>
-                    <p class="separator">{{ article.text }}
-                    </p>
+          <div class="row portfolio-container">
+            {% for project in portfolioProjects %}
+              {% set category = project.activity.one() %}
+              {% set projectImage = project.uniqueImage.one() %}
+              <div class="col-lg-4 col-md-6 portfolio-item filter-{{ category.slug }}">
+                <img src="{{ projectImage.url }}" class="img-fluid" alt="{{ projectImage.title }}">
+                <a href="{{ project.url }}" title="More Details" class="stretched-link">
+                  <div class="portfolio-info">
+                    <h4>{{ project.projectTitle }}</h4>
+                    <p>{{ project.subText }}</p>
+                    {# <a href="{{ projectImage.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ project.title }}"><i class="bx bx-plus"></i></a> #}
+                    {# <a href="{{ project.url }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> #}
                   </div>
-                </div>
+                </a>
               </div>
             {% endfor %}
+          </div>
 
+        </div>
+
+      </div>
+    {% endif %}
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Blog Section ======= -->
+    {% set blogArticles = craft.entries().section('blog').all() %}
+    {% if blogArticles|length > 0 %}
+      <div id="blog" class="text-left paddsection">
+
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>Blog</h2>
           </div>
         </div>
-      </div>
 
-    </div><!-- End Journal Section -->
+        <div class="container">
+          <div class="journal-block">
+            <div class="row">
+
+              {% for article in blogArticles %}
+                {% set articleImage = article.uniqueImage.one() %}
+                <div class="col-lg-4 col-md-6">
+                  <div class="journal-info">
+                    <a href="{{ article.url }}">
+                      <img src="{{ articleImage.url }}" class="img-responsive" alt="{{ article.title }}">
+                    </a>
+                    <div class="journal-txt">
+                      <h4><a href="{{ article.url }}">{{ article.title|upper }}</a></h4>
+                      <p class="separator">{{ article.text }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    {% endif %}
+    <!-- End Journal Section -->
 
     <!-- ======= Contact Section ======= -->
     <div id="contact" class="paddsection">
@@ -192,14 +198,34 @@
             <div class="col-lg-6">
               <div class="contact-contact">
 
+                <h2 class="mb-30">{{ contact.contactTitle|upper }}</h2>
+                <p>{{ contact.contactText }}</p>
+
+                {% if contact.socialNetwork %}
+                  <ul class="list-unstyled list-social">
+                  {% for item in contact.socialNetwork %}
+                    <li>
+                      <a href="{{ item.link }}" target="_blank">
+                        <i class="bi bi-{{ item.name }}"></i>
+                      </a>
+                    </li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+
                 {% set address = contact.address.one() %}
-                <h2 class="mb-30">{{ address.title|upper }}</h2>
+                {% if address %}
+                  <h2 class="mb-30">{{ address.title|upper }}</h2>
+
+                  <ul class="contact-details">
+                    <li><span>{{ address.addressLine1 }}</span></li>
+                    <li><span>{{ address.addressLine2 }}</span></li>
+                    <li><span>{{ address.postalCode ~ ' ' ~ address.locality }}</span></li>
+                    <br>
+                  </ul>
+                {% endif %}
 
                 <ul class="contact-details">
-                  <li><span>{{ address.addressLine1 }}</span></li>
-                  <li><span>{{ address.addressLine2 }}</span></li>
-                  <li><span>{{ address.postalCode ~ ' ' ~ address.locality }}</span></li>
-                  <br>
                   <li><span>{{ contact.email }}</span></li>
                 </ul>
 
@@ -216,97 +242,73 @@
               {% endmacro %}
 
               {% set submission = submission ?? null %}
-              {% if submission %}
-                <p>Thanks for sending that in, {{ craft.app.request.getQueryParam('from') }}!</p>
-              {% endif %}
-              {{ craft.app.request.getQueryParam('from') }}
 
-              <form method="post" action="" accept-charset="UTF-8">
-                  {{ csrfInput() }}
-                  {{ actionInput('contact-form/send') }}
-                  {{ redirectInput('?from={fromName}') }}
+              <p class="form-message"></p>
 
-                  <h3><label for="from-name">Your Name</label></h3>
-                  {{ input('text', 'fromName', submission.fromName ?? '', {
-                      id: 'from-name',
-                      autocomplete: 'name',
-                  }) }}
-                  {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
-
-                  <h3><label for="from-email">Your Email</label></h3>
-                  {{ input('email', 'fromEmail', submission.fromEmail ?? '', {
-                      id: 'from-email',
-                      autocomplete: 'email',
-                  }) }}
-                  {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
-
-                  <h3><label for="subject">Subject</label></h3>
-                  {{ input('text', 'subject', submission.subject ?? '', {
-                      id: 'subject',
-                  }) }}
-                  {{ submission ? _self.errorList(submission.getErrors('subject')) }}
-
-                  <h3><label for="message">Message</label></h3>
-                  {{ tag('textarea', {
-                      text: submission.message ?? '',
-                      id: 'message',
-                      name: 'message',
-                      rows: 10,
-                      cols: 40,
-                  }) }}
-                  {{ submission ? _self.errorList(submission.getErrors('message')) }}
-
-                  <button type="submit">Send</button>
-              </form>
-
-
-
-
-{# 
-
-              <form action="contact-form/send" method="post" role="form" class="php-email-form" accept-charset="UTF-8">
+              <form method="post" action="" role="form" accept-charset="UTF-8" id="my-contact-form">
                 {{ csrfInput() }}
                 {{ actionInput('contact-form/send') }}
-                {{ redirectInput('contact/thanks') }}
+                {{ redirectInput('?from={fromName}') }}
 
                 <div class="row gy-3">
 
                   <div class="col-lg-6">
                     <div class="form-group contact-block1">
-                      <input type="text" name="fromName" class="form-control" id="name" placeholder="Your Name" required>
+                      {{ input('text', 'fromName', submission.fromName ?? '', {
+                          id: 'name',
+                          autocomplete: 'name',
+                          placeholder: 'Nom',
+                          class: 'form-control',
+                      }) }}
+                      {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
                     </div>
                   </div>
 
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <input type="email" class="form-control" name="fromEmail" id="email" placeholder="Your Email" required>
+                      {{ input('email', 'fromEmail', submission.fromEmail ?? '', {
+                          id: 'email',
+                          autocomplete: 'email',
+                          placeholder: 'Email',
+                          class: 'form-control',
+                      }) }}
+                      {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
                     </div>
                   </div>
 
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                      {{ input('text', 'subject', submission.subject ?? '', {
+                          id: 'subject',
+                          placeholder: 'Objet',
+                          class: 'form-control',
+                      }) }}
+                      {{ submission ? _self.errorList(submission.getErrors('subject')) }}
                     </div>
                   </div>
 
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <textarea class="form-control" name="fromMessage" placeholder="Message" required></textarea>
+                      {{ tag('textarea', {
+                          text: submission.message ?? '',
+                          id: 'message',
+                          name: 'message',
+                          rows: 10,
+                          cols: 40,
+                          placeholder: 'Message',
+                          class: 'form-control',
+                      }) }}
+                      {{ submission ? _self.errorList(submission.getErrors('message')) }}
                     </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
                   </div>
 
                   <div class="mt-0">
-                    <input type="submit" class="btn btn-defeault btn-send" value="Send message">
+                    <input type="submit" class="btn btn-defeault btn-send" value="Envoyer">
                   </div>
 
                 </div>
-              </form> #}
+              </form>
+
             </div>
           </div>
         </div>

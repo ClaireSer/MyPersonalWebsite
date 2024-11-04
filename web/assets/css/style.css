@@ -471,16 +471,16 @@ p {
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #fff;
+  color: #292929;
 }
 
 .hero-content p {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 3px;
   margin-top: 0;
   margin-bottom: 30px;
   text-transform: capitalize;
-  color: #fff;
+  color: #292929;
   font-weight: 500;
 }
 
@@ -490,7 +490,7 @@ p {
 }
 
 .hero-content .list-social li i {
-  color: #fff;
+  color: #292929;
   font-size: 15px;
 }
 
@@ -881,6 +881,13 @@ p {
 
 #contact textarea {
   min-height: 160px;
+}
+
+.success-message {
+  color: #18d26e;
+}
+.error-message {
+  color: #ed3c0d;
 }
 
 .php-email-form .error-message {

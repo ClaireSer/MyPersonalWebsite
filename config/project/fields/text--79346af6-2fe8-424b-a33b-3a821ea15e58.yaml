@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: text
 instructions: null
-name: Texte
+name: Text
 searchable: false
 settings:
   byteLimit: null
@@ -9,7 +9,7 @@ settings:
   code: false
   initialRows: 4
   multiline: false
-  placeholder: Test
+  placeholder: Contact
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

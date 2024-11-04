@@ -54,7 +54,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-12T12:05:21+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
             handle: null
             includeInCards: false
             instructions: null
@@ -70,7 +70,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-12T12:05:21+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
             handle: mobileText
             includeInCards: false
             instructions: null
@@ -86,7 +86,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-12T12:05:21+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
             handle: subText
             includeInCards: false
             instructions: null
@@ -140,7 +140,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-13T11:09:22+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
             handle: descriptionText1
             includeInCards: false
             instructions: null
@@ -156,7 +156,7 @@ fieldLayouts:
           -
             dateAdded: '2024-08-13T11:09:22+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Texte
+            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
             handle: descriptionText2
             includeInCards: false
             instructions: null

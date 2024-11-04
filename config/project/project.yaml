@@ -1,12 +1,16 @@
-dateModified: 1723808741
+dateModified: 1730469436
 email:
   fromEmail: $CONTACT_EMAIL
   fromName: 'Lafitte''s Original'
   replyToEmail: $CONTACT_EMAIL
   template: null
   transportSettings:
-    command: '/usr/local/bin/mailpit sendmail -t --smtp-addr 127.0.0.1:1025'
-  transportType: craft\mail\transportadapters\Sendmail
+    host: $MAILPIT_SMTP_HOSTNAME
+    password: ''
+    port: $MAILPIT_SMTP_PORT
+    useAuthentication: '0'
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
 fs:
   images:
     hasUrls: true
@@ -43,7 +47,7 @@ meta:
     616d0d46-23c9-496d-827f-ef771cbd2b71: Header # Header
     849c5f71-cf05-49f8-b038-aeeb5d1a696a: 'Blog page' # Blog page
     1468bf93-b003-407b-b3eb-74bd76867ce7: 'Portfolio projects' # Portfolio projects
-    79346af6-2fe8-424b-a33b-3a821ea15e58: Texte # Texte
+    79346af6-2fe8-424b-a33b-3a821ea15e58: Text # Text
     56497856-37c4-4c09-967f-a22cb2aafafe: 'Lafitte''s Original' # Lafitte's Original
     64967050-1f66-485f-83a7-672e01130188: Blog # Blog
     a8949d68-f029-4477-a5eb-31d7feeb2692: Heading # Heading
