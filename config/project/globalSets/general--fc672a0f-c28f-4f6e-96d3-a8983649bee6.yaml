@@ -1,13 +1,13 @@
 fieldLayouts:
-  30fd9b94-f142-45f0-ab48-2b44dcf6ec9c:
+  d3bf29b1-c9d0-4042-a1cc-491588cbfa06:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-08-14T12:50:46+00:00'
+            dateAdded: '2024-11-05T10:07:03+00:00'
             elementCondition: null
-            fieldUid: 79346af6-2fe8-424b-a33b-3a821ea15e58 # Text
+            fieldUid: 003e7855-a801-43fa-8c0c-da3f8bead280 # Réseaux sociaux
             handle: null
             includeInCards: false
             instructions: null
@@ -16,13 +16,13 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 62c8f6d1-3ac2-40be-8ed6-93ee2ce25805
+            uid: 517a2af2-eeaa-498c-9c25-99551817a42d
             userCondition: null
             warning: null
             width: 100
         name: Contenu
-        uid: 092ec633-b1cc-4761-a351-3a53e12f13a6
+        uid: 507226c3-32b1-4522-9b5e-c007d65f772f
         userCondition: null
-handle: footer
-name: Footer
-sortOrder: 3
+handle: general
+name: Général
+sortOrder: 4

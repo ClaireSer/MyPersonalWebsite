@@ -1,0 +1,12 @@
+
+{% if general.socialNetwork %}
+  <ul class="list-unstyled list-social">
+  {% for item in general.socialNetwork %}
+    <li>
+      <a href="{{ item.link }}" target="_blank">
+        <i class="bi bi-{{ item.name }}"></i>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}

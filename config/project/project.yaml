@@ -1,4 +1,4 @@
-dateModified: 1730469436
+dateModified: 1730801395
 email:
   fromEmail: $CONTACT_EMAIL
   fromName: 'Lafitte''s Original'
@@ -55,6 +55,7 @@ meta:
     eac18b4f-6a99-44b0-8452-4678a0badd91: 'Domaine d''activité' # Domaine d'activité
     eef85724-4842-4dcf-8997-e217b4129df6: 'Tableau d''information' # Tableau d'information
     fa5b2b7b-9166-43f6-8ebd-b5b9483c0d13: Footer # Footer
+    fc672a0f-c28f-4f6e-96d3-a8983649bee6: Général # Général
     ff5abc68-4f33-4a98-b08b-4d27f4027ccb: 'Portfolio page' # Portfolio page
 plugins:
   ckeditor:

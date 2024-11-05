@@ -99,22 +99,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2024-08-12T12:05:21+00:00'
-            elementCondition: null
-            fieldUid: 003e7855-a801-43fa-8c0c-da3f8bead280 # Réseaux sociaux
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 792aca41-8e16-4874-ba96-9e0695376f5e
-            userCondition: null
-            warning: null
-            width: 100
         name: 'First section'
         uid: 9eff2700-52c2-48fb-9178-e576e480dced
         userCondition: null

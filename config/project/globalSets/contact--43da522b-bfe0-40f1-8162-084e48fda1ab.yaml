@@ -53,22 +53,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-01T13:57:16+00:00'
-            elementCondition: null
-            fieldUid: 003e7855-a801-43fa-8c0c-da3f8bead280 # Réseaux sociaux
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c837e975-b5e9-4c79-8acb-eef56515b1e4
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-08-13T13:12:15+00:00'
             elementCondition: null
             fieldUid: 3d2f8f39-b4c4-4889-883b-1a16314464be # Email

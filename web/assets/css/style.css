@@ -873,6 +873,11 @@ p {
   padding-bottom: 10px;
 }
 
+.contact-contact .list-social li {
+  float: left;
+  margin-right: 20px;
+}
+
 #contact input,
 #contact textarea {
   width: 100%;

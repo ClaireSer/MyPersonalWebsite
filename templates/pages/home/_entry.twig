@@ -24,17 +24,8 @@
         <h1>{{ homeEntry.text }} <span class="typed" data-typed-items="{{ homeEntry.mobileText }}"></span></h1>
         <p>{{ homeEntry.subText }}</p>
 
-        {% if homeEntry.socialNetwork %}
-          <ul class="list-unstyled list-social">
-          {% for item in homeEntry.socialNetwork %}
-            <li>
-              <a href="{{ item.link }}" target="_blank">
-                <i class="bi bi-{{ item.name }}"></i>
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-        {% endif %}
+        {% include "partials/socialNetwork" %}
+
       </div>
     </div>
   </div><!-- End Hero -->
@@ -201,17 +192,7 @@
                 <h2 class="mb-30">{{ contact.contactTitle|upper }}</h2>
                 <p>{{ contact.contactText }}</p>
 
-                {% if contact.socialNetwork %}
-                  <ul class="list-unstyled list-social">
-                  {% for item in contact.socialNetwork %}
-                    <li>
-                      <a href="{{ item.link }}" target="_blank">
-                        <i class="bi bi-{{ item.name }}"></i>
-                      </a>
-                    </li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
+                {% include "partials/socialNetwork" %}
 
                 {% set address = contact.address.one() %}
                 {% if address %}

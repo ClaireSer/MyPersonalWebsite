@@ -4,11 +4,7 @@
     <div class="container">
       <div class="socials-media text-center">
 
-        <ul class="list-unstyled">
-          {% for item in footer.socialNetwork %}
-            <li><a href="{{ item.link }}" target="_blank"><i class="bi bi-{{ item.name }}"></i></a></li>
-          {% endfor %}
-        </ul>
+        {% include "partials/socialNetwork" %}
 
       </div>
 
